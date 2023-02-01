@@ -1,0 +1,38 @@
+def dublicate_encode(string):
+
+
+    seen_xter = {}
+    repeated_xter = ""
+    unrepeat = ""
+    new_string=""
+
+    for x in string:
+        if x in seen_xter:
+            repeated_xter += x
+            unrepeat = unrepeat.replace(x, "")
+        
+
+        else:
+            seen_xter[x] = True
+            unrepeat += x
+
+    for x in string:
+        if x in repeated_xter:
+            new_string += ")"
+        else:
+            new_string +="("
+
+    return new_string
+
+
+
+def main():
+    word = input("input the word: ").lower()
+
+
+    #print("Repeated characters are ", repeated_xter)
+    #print("unrepeated characters are: ", unrepeat)
+
+    print(dublicate_encode(word))
+    
+main()
